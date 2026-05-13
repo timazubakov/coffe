@@ -9,71 +9,69 @@
 </head>
 <body>
     <div class="box">
-      <header>
-        <div class="header_box">
-            <nav>
-                <img class="logo" src="img/Coffea.png" alt="logo">
-                <div class="box_item">
-                    <a href="">home</a>
-                    <a href="">coffee</a>
-                    <a href="">bakery</a>
-                    <a href="">shop</a>
-                    <a href="">about</a>
-                    <a href="">login</a>
-                </div>
+        <header>
+            <div class="header_box">
+                <nav>
+                    <img class="logo" src="img/Coffea.png" alt="logo">
+                    <div class="box_item">
+                        <a href="#">home</a>
+                        <a href="#">coffee</a>
+                        <a href="#">bakery</a>
+                        <a href="#">shop</a>
+                        <a href="#">about</a>
+                        <a href="#">login</a>
+                    </div>
+                    <img class="search" src="img/Group 7.png" alt="search" style="height: 20px; cursor: pointer;">
+                </nav>
 
-            </nav>
-
-            <div class="header_info">
-                <img class="search" src="img/Group 7.png" alt="search">
-                <div class="header_text">
-                    <p class="subtitle">WELCOME</p>
-                    <h1>We serve the richest coffee in the city!</h1>
-                    <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
-                    <a href="#" class="order_btn">Order Now</a>
-                </div>
-                <div class="header_image">
-                    <img src="img/coffee_main.png" alt="Coffee">
+                <div class="header_info">
+                    <div class="header_text">
+                        <p class="subtitle">WELCOME</p>
+                        <h1>We serve the richest coffee in the city!</h1>
+                        <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+                        <a href="#" class="order_btn">Order Now</a>
+                    </div>
+                    <div class="header_image">
+                        <img src="img/coffee_cup.png" alt="Coffee">
+                    </div>
                 </div>
             </div>
-        </div>
-      </header>
+        </header>
 
-      <section class="categories_section swiper mySwiper">
-          <div class="swiper-wrapper">
-              <div class="swiper-slide category_card active">
-                  <img src="img/hot_coffee.png" alt="">
-                  <p>Hot Coffee</p>
-              </div>
-              <div class="swiper-slide category_card">
-                  <img src="img/cold_coffee.png" alt="">
-                  <p>Cold Coffee</p>
-              </div>
-              <div class="swiper-slide category_card">
-                  <img src="img/cup_coffee.png" alt="">
-                  <p>Cup Coffee</p>
-              </div>
-              <div class="swiper-slide category_card">
-                  <img src="img/dessert.png" alt="">
-                  <p>Dessert</p>
-              </div>
-          </div>
-      </section>
+        <section class="categories_section swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide category_card active">
+                    <img src="img/hot_coffee_icon.png" alt="">
+                    <p>Hot Coffee</p>
+                </div>
+                <div class="swiper-slide category_card">
+                    <img src="img/cold_coffee_icon.png" alt="">
+                    <p>Cold Coffee</p>
+                </div>
+                <div class="swiper-slide category_card">
+                    <img src="img/cup_coffee_icon.png" alt="">
+                    <p>Cup Coffee</p>
+                </div>
+                <div class="swiper-slide category_card">
+                    <img src="img/dessert_icon.png" alt="">
+                    <p>Dessert</p>
+                </div>
+            </div>
+        </section>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <script>
-      var swiper = new Swiper(".mySwiper", {
-        slidesPerView: 4,
-        spaceBetween: 30,
-        grabCursor: true,
-        breakpoints: {
-          320: { slidesPerView: 2 },
-          768: { slidesPerView: 3 },
-          1024: { slidesPerView: 4 }
-        }
-      });
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 2,
+            spaceBetween: 20,
+            grabCursor: true,
+            breakpoints: {
+                768: { slidesPerView: 3, spaceBetween: 40 },
+                1024: { slidesPerView: 4, spaceBetween: 50 }
+            }
+        });
     </script>
 </body>
 </html>
