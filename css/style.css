@@ -1,55 +1,76 @@
-*{
+/* 1. Сброс стилей и шрифты */
+* {
     margin: 0;
     padding: 0;
-    border: 0 ;
+    border: 0;
     box-sizing: border-box;
 }
-.box{
-    width: 100%;
 
+body {
+    background-color: #121212; /* Темный фон для всей страницы */
+    font-family: 'Arial', sans-serif; /* Можно заменить на Poppins через Google Fonts */
+    color: white;
 }
-header{
+
+.box {
     width: 100%;
-    height: 100vh;
-    background: url(../img/fon.png);
-    background-size: 100% 100%;
+}
+
+/* 2. Шапка (Header) */
+header {
+    width: 100%;
+    min-height: 100vh;
+    /* Укажи правильный путь к фону. Если фон в той же папке, что и index.html, убери img/ */
+    background: linear-gradient(to right, #121212 40%, rgba(0,0,0,0)), url('../img/fon.png');
+    background-size: cover;
+    background-position: center;
     display: flex;
     justify-content: center;
-  
 }
-nav{
+
+.header_box {
+    width: 75%;
+    margin-top: 50px;
+}
+
+/* Навигация */
+nav {
     width: 100%;
     height: 60px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.box_item{
-    width: 40%;
-    height: 27px;
+
+.logo {
+    height: 24px;
+}
+
+.box_item {
+    width: 45%;
     display: flex;
     justify-content: space-between;
 }
-.logo{
-    height: 24px;
-}
-.box_item a{
+
+.box_item a {
     text-transform: uppercase;
     color: white;
     text-decoration: none;
-    font-size: 18px;
-}
-.header_box {
-    width: 75%;
-    margin-top: 50px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    transition: 0.3s;
 }
 
+.box_item a:hover {
+    color: #C4A484; /* Цвет при наведении */
+}
+
+/* Контентная часть хедера */
 .header_info {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 80px; /* Отступ от меню */
-    background: transparent; /* Убираем черный фон, если фон картинкой */
+    margin-top: 80px;
 }
 
 .header_text {
@@ -65,7 +86,7 @@ nav{
 
 h1 {
     font-size: 56px;
-    font-family: serif; /* Желательно подключить Playfair Display */
+    font-family: serif; 
     line-height: 1.1;
     margin-bottom: 25px;
 }
@@ -77,10 +98,9 @@ h1 {
     line-height: 1.6;
 }
 
-/* Кнопка Order Now */
 .order_btn {
     display: inline-block;
-    padding: 12px 30px;
+    padding: 12px 35px;
     border: 1px solid white;
     color: white;
     text-decoration: none;
@@ -101,6 +121,47 @@ h1 {
 }
 
 .header_image img {
-    width: 130%; /* Увеличиваем, чтобы выходила за края, как на макете */
-    max-width: 700px;
+    width: 120%; /* Чтобы картинка была крупной и эффектной */
+    max-width: 650px;
+    height: auto;
+}
+
+/* 3. Слайдер категорий (Swiper) */
+.categories_section {
+    width: 100%;
+    background-color: #E6E0D4; /* Бежевый фон как на макете */
+    padding: 50px 0;
+    overflow: hidden; /* Обязательно для Swiper */
+}
+
+.category_card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.category_card img {
+    height: 60px;
+    margin-bottom: 15px;
+}
+
+.category_card p {
+    color: #4A4A4A;
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+/* Стиль для активного элемента или при наведении */
+.category_card.active, .category_card:hover {
+    transform: translateY(-10px);
+}
+
+.category_card.active {
+    border: 2px solid #C4A484;
+    padding: 15px;
+    border-radius: 15px;
 }
