@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coffea</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -31,23 +30,25 @@
         </div>
     </header>
 
-    <section class="categories swiper mySwiper">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide category_item active-box">
-                <img src="img/icon1.png" alt="">
-                <p>Hot Coffee</p>
-            </div>
-            <div class="swiper-slide category_item">
-                <img src="img/icon2.png" alt="">
-                <p>Cold Coffee</p>
-            </div>
-            <div class="swiper-slide category_item">
-                <img src="img/icon3.png" alt="">
-                <p>Cup Coffee</p>
-            </div>
-            <div class="swiper-slide category_item">
-                <img src="img/icon4.png" alt="">
-                <p>Dessert</p>
+    <section class="categories">
+        <div class="container">
+            <div class="categories-container">
+                <div class="category_item active-box">
+                    <img src="img/icon1.png" alt="">
+                    <p>Hot Coffee</p>
+                </div>
+                <div class="category_item">
+                    <img src="img/icon2.png" alt="">
+                    <p>Cold Coffee</p>
+                </div>
+                <div class="category_item">
+                    <img src="img/icon3.png" alt="">
+                    <p>Cup Coffee</p>
+                </div>
+                <div class="category_item">
+                    <img src="img/icon4.png" alt="">
+                    <p>Dessert</p>
+                </div>
             </div>
         </div>
     </section>
@@ -56,14 +57,15 @@
         <div class="container relative-box">
             <h2 class="section-title">Our Special Dessert</h2>
             
-            <button class="nav-arrow prev-arrow">&#10229;</button>
-            <button class="nav-arrow next-arrow">&#10230;</button>
+            <a href="#p1" class="nav-arrow prev-arrow">&#10229;</a>
+            <a href="#p4" class="nav-arrow next-arrow">&#10230;</a>
 
-            <div class="products-grid">
-                <div class="product-card">
+            <div class="products-slider-wrapper">
+                <div class="product-card" id="p1">
                     <div class="card-img-wrapper">
                         <img src="img/lungo1.jpg" alt="Lungo coffee">
-                        <span class="wishlist-icon">&#9825;</span>
+                        <input type="checkbox" id="heart1" class="heart-checkbox">
+                        <label for="heart1" class="wishlist-icon"></label>
                     </div>
                     <h3>Lungo coffee</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
@@ -72,10 +74,12 @@
                         <a href="#" class="card-btn">Order Now</a>
                     </div>
                 </div>
-                <div class="product-card">
+
+                <div class="product-card" id="p2">
                     <div class="card-img-wrapper">
                         <img src="img/lungo2.jpg" alt="Lungo coffee">
-                        <span class="wishlist-icon">&#9825;</span>
+                        <input type="checkbox" id="heart2" class="heart-checkbox">
+                        <label for="heart2" class="wishlist-icon"></label>
                     </div>
                     <h3>Lungo coffee</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
@@ -84,10 +88,12 @@
                         <a href="#" class="card-btn">Order Now</a>
                     </div>
                 </div>
-                <div class="product-card">
+
+                <div class="product-card" id="p3">
                     <div class="card-img-wrapper">
                         <img src="img/lungo3.jpg" alt="Lungo coffee">
-                        <span class="wishlist-icon">&#9825;</span>
+                        <input type="checkbox" id="heart3" class="heart-checkbox">
+                        <label for="heart3" class="wishlist-icon"></label>
                     </div>
                     <h3>Lungo coffee</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
@@ -96,10 +102,12 @@
                         <a href="#" class="card-btn">Order Now</a>
                     </div>
                 </div>
-                <div class="product-card">
+
+                <div class="product-card" id="p4">
                     <div class="card-img-wrapper">
                         <img src="img/lungo4.jpg" alt="Lungo coffee">
-                        <span class="wishlist-icon">&#9825;</span>
+                        <input type="checkbox" id="heart4" class="heart-checkbox">
+                        <label for="heart4" class="wishlist-icon"></label>
                     </div>
                     <h3>Lungo coffee</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
@@ -132,8 +140,8 @@
             <p class="sub-title">Come and Join</p>
             <h2 class="section-title">Our Happy Customers</h2>
 
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
+            <div class="testimonials-slider-wrapper">
+                <div class="testimonial-card" id="t1">
                     <div class="testimonial-header">
                         <div class="user-info">
                             <img src="img/avatar1.jpg" alt="James Smith" class="avatar">
@@ -144,9 +152,10 @@
                         </div>
                         <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
                     </div>
-                    <p class="testimonial-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+                    <p class="testimonial-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
                 </div>
-                <div class="testimonial-card">
+
+                <div class="testimonial-card" id="t2">
                     <div class="testimonial-header">
                         <div class="user-info">
                             <img src="img/avatar2.jpg" alt="James Smith" class="avatar">
@@ -157,9 +166,10 @@
                         </div>
                         <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
                     </div>
-                    <p class="testimonial-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+                    <p class="testimonial-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
                 </div>
-                <div class="testimonial-card">
+
+                <div class="testimonial-card" id="t3">
                     <div class="testimonial-header">
                         <div class="user-info">
                             <img src="img/avatar3.jpg" alt="James Smith" class="avatar">
@@ -170,25 +180,16 @@
                         </div>
                         <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
                     </div>
-                    <p class="testimonial-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+                    <p class="testimonial-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
                 </div>
             </div>
 
             <div class="pagination-dots">
-                <span class="dot active"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
+                <a href="#t1" class="dot"></a>
+                <a href="#t2" class="dot"></a>
+                <a href="#t3" class="dot"></a>
             </div>
         </div>
     </section>
-
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script>
-        new Swiper(".mySwiper", {
-            slidesPerView: 4,
-            spaceBetween: 20,
-            breakpoints: { 320: { slidesPerView: 2 }, 768: { slidesPerView: 4 } }
-        });
-    </script>
 </body>
 </html>

@@ -4,10 +4,15 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth; /* Обеспечивает плавную прокрутку при нажатии на стрелки и точки */
+}
+
 body {
     background-color: #121212;
     font-family: 'Montserrat', sans-serif;
     color: white;
+    overflow-x: hidden;
 }
 
 header {
@@ -67,30 +72,42 @@ h1 {
     border-radius: 30px;
     text-decoration: none;
     font-weight: 600;
+    transition: transform 0.2s;
 }
+.order_btn:active { transform: scale(0.95); }
 
+/* Категории (Переделаны на чистый CSS) */
 .categories {
     background-color: #e5e0d4;
     padding: 40px 0;
 }
+
+.categories-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+.categories-container::-webkit-scrollbar { display: none; }
 
 .category_item {
     display: flex;
     flex-direction: column;
     align-items: center;
     color: #333;
+    flex: 1;
+    min-width: 120px;
 }
 
 .category_item img { width: 40px; margin-bottom: 10px; filter: contrast(0.5); }
 .category_item p { font-weight: 600; font-size: 13px; }
-
 .active-box { border: 1px solid #888; padding: 10px; border-radius: 10px; }
 
 /* ==========================================================================
-   НОВЫЕ СЕКЦИИ С КАРТИНКИ
+   НОВЫЕ СЕКЦИИ БЕЗ JAVASCRIPT (ЧИСТЫЙ HTML/CSS)
    ========================================================================== */
 
-/* Общие стили для светлых секций */
 .light-section {
     background-color: #f4f1ea;
     color: #121212;
@@ -107,19 +124,27 @@ h1 {
     font-weight: 700;
 }
 
-/* Секция десертов и Lungo Coffee */
-.products-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+/* Слайдер десертов на CSS Scroll Snap */
+.products-slider-wrapper {
+    display: flex;
     gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none; /* Скрывает скроллбар в Firefox */
+}
+.products-slider-wrapper::-webkit-scrollbar {
+    display: none; /* Скрывает скроллбар в Chrome/Safari */
 }
 
 .product-card {
+    min-width: calc(25% - 15px); /* 4 карточки в ряд на десктопе */
+    scroll-snap-align: start;
     background-color: #eae3d5;
     padding: 15px;
-    border-radius: 0px; /* Прямоугольные карточки как на макете */
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 .card-img-wrapper {
@@ -134,17 +159,30 @@ h1 {
     object-fit: cover;
 }
 
+/* Рабочее сердечко на чистом CSS (через скрытый чекбокс) */
+.heart-checkbox {
+    display: none;
+}
+
 .wishlist-icon {
     position: absolute;
     top: 12px;
     right: 12px;
-    font-size: 18px;
+    font-size: 22px;
     color: white;
     cursor: pointer;
+    user-select: none;
+    transition: transform 0.2s;
+}
+.wishlist-icon:hover { transform: scale(1.2); }
+.wishlist-icon::before { content: '\2661'; } /* Пустое */
+
+.heart-checkbox:checked + .wishlist-icon::before {
+    content: '\2665'; /* Закрашенное */
+    color: #e74c3c;
 }
 
 .product-card h3 {
-    font-family: 'Montserrat', sans-serif;
     font-size: 18px;
     font-weight: 700;
     margin-bottom: 8px;
@@ -164,10 +202,7 @@ h1 {
     margin-top: auto;
 }
 
-.price {
-    font-weight: 700;
-    font-size: 13px;
-}
+.price { font-weight: 700; font-size: 13px; }
 
 .card-btn {
     background-color: #2c160e;
@@ -177,57 +212,45 @@ h1 {
     font-size: 11px;
     font-weight: 600;
     border-radius: 4px;
-    transition: background 0.3s;
+    transition: background 0.3s, transform 0.1s;
 }
+.card-btn:active { transform: scale(0.95); }
 
-.card-btn:hover {
-    background-color: #4a281b;
-}
-
-/* Стрелки навигации (вне контейнера) */
+/* Кнопки-стрелки как ссылки-якоря */
 .nav-arrow {
     position: absolute;
     top: 55%;
     transform: translateY(-50%);
     background-color: #eae3d5;
-    border: none;
+    text-decoration: none;
     width: 40px;
     height: 40px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
     font-size: 16px;
     color: #333;
     z-index: 10;
+    transition: background 0.2s;
 }
-
+.nav-arrow:hover { background-color: #dcd4c3; }
 .prev-arrow { left: -60px; }
 .next-arrow { right: -60px; }
 
-/* Промо-баннер с зернами */
+/* Баннер с зернами */
 .beans-banner {
     background-color: #e5e0d4;
     padding: 50px 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
 }
 
 .banner-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
 }
 
-.banner-text {
-    text-align: center;
-    flex: 1;
-}
-
+.banner-text { text-align: center; flex: 1; }
 .banner-text h2 {
     font-family: 'Playfair Display', serif;
     font-size: 32px;
@@ -245,12 +268,9 @@ h1 {
     border-radius: 25px;
     font-size: 12px;
     font-weight: 600;
-    transition: background 0.3s;
+    transition: background 0.3s, transform 0.1s;
 }
-
-.explore-btn:hover {
-    background-color: #4a281b;
-}
+.explore-btn:active { transform: scale(0.95); }
 
 .banner-img img {
     max-height: 180px;
@@ -258,11 +278,8 @@ h1 {
     display: block;
 }
 
-/* Секция отзывов */
-.testimonials {
-    text-align: center;
-}
-
+/* Секция отзывов на чистом CSS */
+.testimonials { text-align: center; }
 .sub-title {
     font-family: 'Playfair Display', serif;
     font-size: 18px;
@@ -271,18 +288,24 @@ h1 {
     margin-bottom: 5px;
 }
 
-.testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+.testimonials-slider-wrapper {
+    display: flex;
     gap: 25px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
     margin-top: 40px;
-    text-align: left;
 }
+.testimonials-slider-wrapper::-webkit-scrollbar { display: none; }
 
 .testimonial-card {
+    min-width: calc(33.333% - 17px); /* 3 отзыва в ряд на десктопе */
+    scroll-snap-align: start;
     background-color: #eae3d5;
     padding: 25px;
     border-radius: 8px;
+    text-align: left;
 }
 
 .testimonial-header {
@@ -292,42 +315,14 @@ h1 {
     margin-bottom: 15px;
 }
 
-.user-info {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
+.user-info { display: flex; align-items: center; gap: 12px; }
+.avatar { width: 45px; height: 45px; border-radius: 50%; object-fit: cover; }
+.user-info h4 { font-size: 14px; font-weight: 700; margin-bottom: 2px; }
+.role { font-size: 11px; color: #666; }
+.stars { color: #bc9c22; font-size: 12px; letter-spacing: 2px; }
+.testimonial-text { font-size: 12px; line-height: 1.6; color: #444; }
 
-.avatar {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-.user-info h4 {
-    font-size: 14px;
-    font-weight: 700;
-    margin-bottom: 2px;
-}
-
-.role {
-    font-size: 11px;
-    color: #666;
-}
-
-.stars {
-    color: #bc9c22;
-    font-size: 12px;
-    letter-spacing: 2px;
-}
-
-.testimonial-text {
-    font-size: 12px;
-    line-height: 1.6;
-    color: #444;
-}
-
+/* Интерактивные точки пагинации (ссылки-якоря) */
 .pagination-dots {
     display: flex;
     justify-content: center;
@@ -341,23 +336,20 @@ h1 {
     background-color: #bbb;
     border-radius: 50%;
     display: inline-block;
-    cursor: pointer;
+    transition: background 0.3s;
 }
+.dot:hover { background-color: #2c160e; }
 
-.dot.active {
-    background-color: #2c160e;
-}
-
-/* Адаптивность для новых секций */
+/* Адаптивность под мобильные устройства */
 @media (max-width: 992px) {
-    .products-grid { grid-template-columns: repeat(2, 1fr); }
-    .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
-    .nav-arrow { display: none; } /* Скрываем стрелки на планшетах */
+    .product-card { min-width: calc(50% - 10px); } /* по 2 карточки кофе */
+    .testimonial-card { min-width: calc(50% - 13px); } /* по 2 отзыва */
+    .nav-arrow { display: none; } /* скрываем стрелки на мобильных, там работает свайп пальцем */
 }
 
 @media (max-width: 576px) {
-    .products-grid { grid-template-columns: 1fr; }
-    .testimonials-grid { grid-template-columns: 1fr; }
+    .product-card { min-width: 100%; } /* по 1 карточке на весь экран */
+    .testimonial-card { min-width: 100%; } 
     .banner-container { flex-direction: column; gap: 20px; }
     .banner-img img { max-height: 120px; }
 }
