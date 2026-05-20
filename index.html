@@ -5,7 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coffea</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="css/style.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
@@ -38,19 +43,19 @@
         <div class="container">
             <div class="categories-container">
                 <div class="category_item active-box">
-                    <img src="https://img.icons8.com/ios/50/333333/coffee-to-go.png" alt="">
+                    <img src="https://img.icons8.com/ios/50/333333/coffee-to-go.png" alt="Hot Coffee">
                     <p>Hot Coffee</p>
                 </div>
                 <div class="category_item">
-                    <img src="https://img.icons8.com/ios/50/333333/ice-coffee.png" alt="">
+                    <img src="https://img.icons8.com/ios/50/333333/ice-coffee.png" alt="Cold Coffee">
                     <p>Cold Coffee</p>
                 </div>
                 <div class="category_item">
-                    <img src="https://img.icons8.com/ios/50/333333/coffee-cup.png" alt="">
+                    <img src="https://img.icons8.com/ios/50/333333/coffee-cup.png" alt="Cup Coffee">
                     <p>Cup Coffee</p>
                 </div>
                 <div class="category_item">
-                    <img src="https://img.icons8.com/ios/50/333333/cake.png" alt="">
+                    <img src="https://img.icons8.com/ios/50/333333/cake.png" alt="Dessert">
                     <p>Dessert</p>
                 </div>
             </div>
@@ -81,39 +86,39 @@
 
                     <div class="swiper-slide product-card">
                         <div class="card-img-wrapper">
-                            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=500&auto=format&fit=crop&q=60" alt="Lungo coffee">
+                            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=500&auto=format&fit=crop&q=60" alt="Cappuccino">
                             <span class="wishlist-icon">&#9825;</span>
                         </div>
-                        <h3>Lungo coffee</h3>
+                        <h3>Cappuccino</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
                         <div class="card-footer">
-                            <span class="price">Rs. 200</span>
+                            <span class="price">Rs. 220</span>
                             <button class="card-btn js-buy-btn">Order Now</button>
                         </div>
                     </div>
 
                     <div class="swiper-slide product-card">
                         <div class="card-img-wrapper">
-                            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=500&auto=format&fit=crop&q=60" alt="Lungo coffee">
+                            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=500&auto=format&fit=crop&q=60" alt="Ice Latte">
                             <span class="wishlist-icon">&#9825;</span>
                         </div>
-                        <h3>Lungo coffee</h3>
+                        <h3>Ice Latte</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
                         <div class="card-footer">
-                            <span class="price">Rs. 200</span>
+                            <span class="price">Rs. 250</span>
                             <button class="card-btn js-buy-btn">Order Now</button>
                         </div>
                     </div>
 
                     <div class="swiper-slide product-card">
                         <div class="card-img-wrapper">
-                            <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?w=500&auto=format&fit=crop&q=60" alt="Lungo coffee">
+                            <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?w=500&auto=format&fit=crop&q=60" alt="Espresso">
                             <span class="wishlist-icon">&#9825;</span>
                         </div>
-                        <h3>Lungo coffee</h3>
+                        <h3>Espresso</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
                         <div class="card-footer">
-                            <span class="price">Rs. 200</span>
+                            <span class="price">Rs. 180</span>
                             <button class="card-btn js-buy-btn">Order Now</button>
                         </div>
                     </div>
@@ -195,7 +200,7 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <script>
-        // 1. Первый слайдер (Десерты) — настройки Анны Александровны
+        // 1. Первый слайдер (Десерты)
         var swiper = new Swiper(".swiper", {
             slidesPerView: 4,
             spaceBetween: 30,
@@ -210,18 +215,22 @@
             breakpoints: {
                 0: {
                     slidesPerView: 2,
-                    spaceBetween: 10
+                    spaceBetween: 15
                 },
                 768: {
+                    slidesPerView: 3,
+                    spaceBetween: 20
+                },
+                1024: {
                     slidesPerView: 4,
                     spaceBetween: 30
                 }
             }
         });
 
-        // 2. Второй слайдер (Отзывы) — swiper3 от Анны Александровны
+        // 2. Второй слайдер (Отзывы)
         const swiper3 = new Swiper('.swiper3', {
-            slidesPerView: 1, // Базово по одному
+            slidesPerView: 1,
             spaceBetween: 20,
             pagination: {
                 el: '.reviews-pagination',
@@ -238,7 +247,7 @@
             }
         });
 
-        // --- ЛОГИКА ДЛЯ КНОПОК И КОРЗИНЫ ---
+        // --- КОРЗИНА И ИНТЕРАКТИВ ---
         let cartCount = 0;
         const counterEl = document.getElementById('cart-counter');
 
@@ -247,9 +256,12 @@
                 e.preventDefault();
                 cartCount++;
                 counterEl.textContent = cartCount;
-                counterEl.style.transform = 'scale(1.3)';
-                setTimeout(() => counterEl.style.transform = 'scale(1)', 200);
+                counterEl.classList.add('bounce');
             });
+        });
+
+        counterEl.addEventListener('transitionend', () => {
+            counterEl.classList.remove('bounce');
         });
 
         document.getElementById('js-explore').addEventListener('click', () => {
