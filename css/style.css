@@ -12,38 +12,45 @@ body {
     overflow-x: hidden;
 }
 
-/* СТИЛИ ШАПКИ (ССЫЛАЮТСЯ НА ВАШИ ФАЙЛЫ В REPOSITORY) */
+/* СТИЛИ ШАПКИ (Снимок 1) */
 header {
     width: 100%;
     height: auto;
     padding-bottom: 120px;
-    position: relative; /* Позволяет чашке позиционироваться внутри */
-    
-    /* Текстура темного макета фона */
-    background-image: linear-gradient(90deg, #121212 35%, rgba(18, 18, 18, 0.7) 60%, rgba(0, 0, 0, 0) 100%), 
-                      url('./image_f28ef4.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    position: relative; 
+    background-color: #121212;
     display: flex;
     justify-content: center;
 }
 
-/* ВАША ЧАШКА КОФЕ С ЗЕРНАМИ ИЗ КАРТИНКИ */
+/* Градиентное затемнение поверх фона, чтобы текст слева хорошо читался */
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #121212 40%, rgba(18, 18, 18, 0.4) 65%, rgba(0, 0, 0, 0) 100%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* Чашка кофе с зернами на темном фоне встает строго в правую половину */
 .header-coffee-image {
     position: absolute;
     top: 0;
     right: 0;
-    width: 50%; /* На компьютерах занимает правую половину экрана */
+    width: 50%; 
     height: 100%;
-    background-image: url('./image_f28f33.png'); /* Файл прозрачной чашки */
-    background-size: contain;
-    background-position: right center;
+    background-image: url('./image_f28f33.png'); /* Файл прозрачной чашки с зернами */
+    background-size: cover;
+    background-position: center left;
     background-repeat: no-repeat;
-    z-index: 1; /* Оставляет чашку под текстом, чтобы кнопки работали */
+    z-index: 1; 
 }
 
-/* Слой поверх, чтобы текст меню и кнопки были кликабельными */
+/* Контент-слой выше фонов и градиентов */
 .z-index-up {
     position: relative;
     z-index: 5;
@@ -284,17 +291,23 @@ h1 {
     background: #2c160e !important;
 }
 
-/* БАННЕР С ЗЕРНАМИ */
+/* БАННЕР С ЗЕРНАМИ (Снимок 2) */
 .beans-banner {
     background-color: #e5e0d4;
-    padding: 40px 0;
+    padding: 0; /* Очищаем паддинги, чтобы картинки прижимались к краям */
+    overflow: hidden;
 }
 .banner-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
 }
-.banner-text { text-align: center; flex: 1; }
+.banner-text { 
+    text-align: center; 
+    flex: 1; 
+    padding: 40px 20px;
+}
 .banner-text h2 {
     font-family: 'Playfair Display', serif;
     font-size: 30px;
@@ -312,9 +325,14 @@ h1 {
     font-size: 12px;
     font-weight: 600;
 }
+.banner-img {
+    flex: 0 0 30%; /* Картинки занимают фиксированные боковые области */
+    height: 220px;
+}
 .banner-img img {
-    max-height: 160px;
-    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Изображение обрезается и ведет себя как идеальный фон */
     display: block;
 }
 
@@ -346,20 +364,25 @@ h1 {
 .stars { color: #bc9c22; font-size: 12px; letter-spacing: 2px; }
 .testimonial-text { font-size: 12px; line-height: 1.6; color: #444; }
 
-/* СЕКЦИЯ ПОДПИСКИ */
+/* СЕКЦИЯ ПОДПИСКИ (Снимок 3) */
 .subscribe-section {
     background-color: #e5e0d4;
-    padding: 60px 0;
+    padding: 80px 0;
     color: #121212;
+    position: relative; /* Контейнер для абсолютных фоновых элементов */
+    overflow: hidden;
 }
 .subscribe-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* Центрируем форму на экране */
     align-items: center;
-    gap: 40px;
+    text-align: center;
 }
 .subscribe-text-side {
-    flex: 1;
+    max-width: 500px;
+    width: 100%;
+    position: relative;
+    z-index: 3; /* Поднимаем текст над боковым декором */
 }
 .subscribe-text-side h2 {
     font-family: 'Playfair Display', serif;
@@ -375,6 +398,7 @@ h1 {
     display: flex;
     max-width: 450px;
     gap: 10px;
+    margin: 0 auto;
 }
 .subscribe-form input {
     flex: 1;
@@ -395,9 +419,26 @@ h1 {
     font-weight: 600;
     font-size: 13px;
 }
-.subscribe-img-side img {
-    max-height: 150px;
-    object-fit: contain;
+
+/* Декоративные пачки кофейных зерен по бокам */
+.beans-decor {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+.left-beans {
+    left: 0;
+    background-image: url('./image_f28f16.jpg'); /* Левая фоновая картинка */
+    background-position: left center;
+}
+.right-beans {
+    right: 0;
+    background-image: url('./image_f28f16.jpg'); /* Правая фоновая картинка */
+    background-position: right center;
 }
 
 /* ПОДВАЛ (ФУТЕР) */
@@ -476,12 +517,12 @@ footer {
     .category_item { flex: 0 1 calc(50% - 20px); }
     
     header {
-        /* На средних экранах плавно меняем градиент для лучшего отображения */
-        background: linear-gradient(180deg, #121212 40%, rgba(0,0,0,0.5) 100%), 
+        background: linear-gradient(180deg, #121212 40%, rgba(0,0,0,0.6) 100%), 
                     url('./image_f28f33.png');
         background-size: cover;
+        background-position: center;
     }
-    .header-coffee-image { display: none; } /* Скрываем дубликат на планшетах */
+    .header-coffee-image { display: none; } /* Прячем дубликат на планшетах */
     .footer-container { flex-direction: column; gap: 40px; }
     .footer-links-grid { gap: 30px; }
 }
@@ -489,23 +530,25 @@ footer {
 @media (max-width: 768px) {
     .container { width: 90%; }
     nav { padding: 25px 0; }
-    .nav_links a { display: none; } /* На смартфонах прячем меню в аккуратную версию */
+    .nav_links a { display: none; } 
     
     h1 { font-size: 32px; }
     .hero_content { max-width: 100%; text-align: center; }
     .order_btn { width: 100%; }
 
-    .banner-container, .subscribe-container {
+    .banner-container {
         flex-direction: column;
-        gap: 30px;
-        text-align: center;
     }
-    .subscribe-form { margin: 0 auto; }
-    .right-banner-img, .subscribe-img-side { display: none; }
+    .banner-img {
+        width: 100%;
+        height: 150px;
+    }
+    
+    .beans-decor { display: none; } /* Скрываем боковые зерна подписки на телефонах */
 }
 
 @media (max-width: 576px) {
-    .nav-arrow { display: none !important; } /* На смартфонах переключаем свайпами пальца */
+    .nav-arrow { display: none !important; } 
     .category_item { flex: 0 1 calc(50% - 10px); }
     .footer-links-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; width: 100%; }
 }
