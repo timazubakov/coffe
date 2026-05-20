@@ -14,11 +14,19 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
     <header>
         <div class="container">
             <nav>
                 <div class="logo">coffea</div>
-                <div class="nav_links">
+                
+                <button class="menu-toggle" id="js-menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <div class="nav_links" id="js-nav-links">
                     <a href="#">home</a>
                     <a href="#desserts">coffee</a>
                     <a href="#desserts">bakery</a>
@@ -265,6 +273,7 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <script>
+        // Инициализация слайдера десертов
         var swiper = new Swiper(".swiper", {
             slidesPerView: 4,
             spaceBetween: 30,
@@ -277,11 +286,14 @@
                 prevEl: ".swiper-button-prev",
             },
             breakpoints: {
-                0: { slidesPerView: 1.5, spaceBetween: 15 },
-                768: { slidesPerView: 4, spaceBetween: 30 }
+                0: { slidesPerView: 1.3, spaceBetween: 15 }, // Улучшено скольжение на мобильных
+                480: { slidesPerView: 2, spaceBetween: 20 },
+                768: { slidesPerView: 3, spaceBetween: 25 },
+                1024: { slidesPerView: 4, spaceBetween: 30 }
             }
         });
 
+        // Инициализация слайдера отзывов
         const swiper3 = new Swiper('.swiper3', {
             slidesPerView: 1,
             spaceBetween: 20,
@@ -296,6 +308,27 @@
             }
         });
 
+        // Логика работы мобильного меню гамбургера
+        const menuToggle = document.getElementById('js-menu-toggle');
+        const navLinks = document.getElementById('js-nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            navLinks.classList.toggle('open');
+            // Запрещаем скролл страницы при открытом меню
+            document.body.classList.toggle('no-scroll');
+        });
+
+        // Закрытие меню при клике на ссылки
+        document.querySelectorAll('.nav_links a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                navLinks.classList.remove('open');
+                document.body.classList.remove('no-scroll');
+            });
+        });
+
+        // Лайки (Wishlist)
         document.querySelectorAll('.wishlist-icon').forEach(heart => {
             heart.addEventListener('click', function() {
                 this.classList.toggle('active-heart');
@@ -309,6 +342,7 @@
             });
         });
 
+        // Выбор активной категории
         document.querySelectorAll('.category_item').forEach(item => {
             item.addEventListener('click', function() {
                 document.querySelectorAll('.category_item').forEach(i => i.classList.remove('active-box'));
