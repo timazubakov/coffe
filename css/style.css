@@ -1,4 +1,4 @@
-/* --- БАЗОВЫЕ НАСТРОЙКИ --- */
+/* --- СБРОС И БАЗОВЫЕ СТИЛИ --- */
 * {
     margin: 0;
     padding: 0;
@@ -12,48 +12,16 @@ body {
     overflow-x: hidden;
 }
 
-/* СТИЛИ ШАПКИ (Снимок 1) */
+/* --- ШАПКА САЙТА --- */
 header {
     width: 100%;
     height: auto;
-    padding-bottom: 120px;
-    position: relative; 
-    background-color: #121212;
+    padding-bottom: 100px;
+    background: linear-gradient(90deg, #121212 30%, rgba(0,0,0,0) 80%), url('../img/Group 7.png');
+    background-size: cover;
+    background-position: center;
     display: flex;
     justify-content: center;
-}
-
-/* Градиентное затемнение поверх фона, чтобы текст слева хорошо читался */
-header::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, #121212 40%, rgba(18, 18, 18, 0.4) 65%, rgba(0, 0, 0, 0) 100%);
-    z-index: 2;
-    pointer-events: none;
-}
-
-/* Чашка кофе с зернами на темном фоне встает строго в правую половину */
-.header-coffee-image {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 50%; 
-    height: 100%;
-    background-image: url('./image_f28f33.png'); /* Файл прозрачной чашки с зернами */
-    background-size: cover;
-    background-position: center left;
-    background-repeat: no-repeat;
-    z-index: 1; 
-}
-
-/* Контент-слой выше фонов и градиентов */
-.z-index-up {
-    position: relative;
-    z-index: 5;
 }
 
 .container { 
@@ -66,7 +34,7 @@ header::before {
     position: relative;
 }
 
-/* НАВИГАЦИЯ */
+/* --- НАВИГАЦИЯ --- */
 nav {
     display: flex;
     justify-content: space-between;
@@ -77,12 +45,11 @@ nav {
 .logo { 
     font-family: 'Playfair Display', serif; 
     font-size: 28px; 
-    text-transform: lowercase;
 }
 
 .nav_links { 
     display: flex; 
-    gap: 25px; 
+    gap: 30px; 
     align-items: center; 
 }
 
@@ -94,19 +61,13 @@ nav {
     letter-spacing: 1px; 
 }
 
-.search-icon {
-    cursor: pointer;
-    font-size: 16px;
-    color: white;
-}
-
+/* --- КОРЗИНА --- */
 .cart-icon-wrapper {
     position: relative;
     cursor: pointer;
     font-size: 18px;
-    margin-left: 5px;
+    margin-left: 10px;
 }
-
 .cart-count {
     position: absolute;
     top: -10px;
@@ -120,11 +81,7 @@ nav {
     transition: transform 0.2s ease;
 }
 
-.cart-count.bounce {
-    transform: scale(1.3);
-}
-
-/* КОНТЕНТ ШАПКИ */
+/* --- ГЛАВНЫЙ КОНТЕНТ --- */
 .hero_content {
     margin-top: 100px;
     max-width: 500px; 
@@ -139,7 +96,7 @@ nav {
 
 h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 56px;
+    font-size: 60px;
     line-height: 1.1;
     margin-bottom: 25px;
 }
@@ -165,17 +122,16 @@ h1 {
 }
 .order_btn:active { transform: scale(0.95); }
 
-/* КАТЕГОРИИ */
+/* --- КАТЕГОРИИ --- */
 .categories {
     background-color: #e5e0d4;
-    padding: 35px 0;
+    padding: 40px 0;
 }
 
 .categories-container {
     display: flex;
     justify-content: space-between;
     gap: 20px;
-    flex-wrap: wrap;
 }
 
 .category_item {
@@ -183,39 +139,40 @@ h1 {
     flex-direction: column;
     align-items: center;
     color: #333;
-    flex: 1 1 calc(25% - 20px);
-    min-width: 110px;
+    flex: 1;
     cursor: pointer;
     padding: 10px;
     transition: all 0.2s ease;
 }
-.category_item img { width: 38px; margin-bottom: 8px; filter: contrast(0.6); }
+.category_item img { width: 40px; margin-bottom: 10px; filter: contrast(0.5); }
 .category_item p { font-weight: 600; font-size: 13px; }
-.active-box { border: 1px solid #777; border-radius: 10px; background-color: rgba(0,0,0,0.03); }
+.active-box { border: 1px solid #888; border-radius: 10px; background-color: rgba(0,0,0,0.03); }
 
-/* КАРТОЧКИ ТОВАРОВ И СЛАЙДЕРЫ */
+/* --- СЕКЦИИ СЛАЙДЕРОВ --- */
 .light-section {
     background-color: #f4f1ea;
     color: #121212;
-    padding: 70px 0;
+    padding: 80px 0;
 }
 
 .section-title {
     font-family: 'Playfair Display', serif;
     text-align: center;
-    font-size: 26px;
-    letter-spacing: 1px;
-    margin-bottom: 45px;
+    font-size: 24px;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
     text-transform: uppercase;
     font-weight: 700;
 }
 
+/* --- КАРТОЧКИ ТОВАРОВ --- */
 .product-card {
     background-color: #eae3d5;
     padding: 15px;
     display: flex;
     flex-direction: column;
     border-radius: 4px;
+    height: auto;
 }
 
 .card-img-wrapper {
@@ -237,9 +194,13 @@ h1 {
     color: white;
     cursor: pointer;
     user-select: none;
+    transition: color 0.2s ease;
+}
+.wishlist-icon.active-heart {
+    color: #e74c3c;
 }
 
-.product-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
+.product-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
 .product-card p { font-size: 12px; color: #555; line-height: 1.5; margin-bottom: 20px; }
 
 .card-footer {
@@ -261,7 +222,7 @@ h1 {
     border-radius: 4px;
 }
 
-/* СТРЕЛКИ НАВИГАЦИИ СЛАЙДЕРА */
+/* --- КУРСОРЫ И НАВИГАЦИЯ SWIPER --- */
 .nav-arrow {
     position: absolute;
     top: 50%;
@@ -269,8 +230,8 @@ h1 {
     background-color: #eae3d5;
     border: none;
     cursor: pointer;
-    width: 42px;
-    height: 42px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -278,39 +239,33 @@ h1 {
     font-size: 16px;
     color: #333;
     z-index: 10;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
+.swiper-button-next::after, .swiper-button-prev::after { display: none !important; }
 .prev-arrow { left: -60px; }
 .next-arrow { right: -60px; }
 
 .swiper-pagination {
     position: relative !important;
-    margin-top: 35px;
+    margin-top: 30px;
 }
 .swiper-pagination-bullet-active {
     background: #2c160e !important;
 }
 
-/* БАННЕР С ЗЕРНАМИ (Снимок 2) */
+/* --- БАННЕР --- */
 .beans-banner {
     background-color: #e5e0d4;
-    padding: 0; /* Очищаем паддинги, чтобы картинки прижимались к краям */
-    overflow: hidden;
+    padding: 50px 0;
 }
 .banner-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
 }
-.banner-text { 
-    text-align: center; 
-    flex: 1; 
-    padding: 40px 20px;
-}
+.banner-text { text-align: center; flex: 1; }
 .banner-text h2 {
     font-family: 'Playfair Display', serif;
-    font-size: 30px;
+    font-size: 32px;
     color: #121212;
     margin-bottom: 20px;
     line-height: 1.3;
@@ -325,18 +280,13 @@ h1 {
     font-size: 12px;
     font-weight: 600;
 }
-.banner-img {
-    flex: 0 0 30%; /* Картинки занимают фиксированные боковые области */
-    height: 220px;
-}
 .banner-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Изображение обрезается и ведет себя как идеальный фон */
+    max-height: 180px;
+    object-fit: contain;
     display: block;
 }
 
-/* ОТЗЫВЫ */
+/* --- ОТЗЫВЫ --- */
 .testimonials { text-align: center; }
 .sub-title {
     font-family: 'Playfair Display', serif;
@@ -345,11 +295,13 @@ h1 {
     color: #555;
     margin-bottom: 5px;
 }
+
 .testimonial-card {
     background-color: #eae3d5;
     padding: 25px;
     border-radius: 8px;
     text-align: left;
+    height: auto;
 }
 .testimonial-header {
     display: flex;
@@ -364,191 +316,19 @@ h1 {
 .stars { color: #bc9c22; font-size: 12px; letter-spacing: 2px; }
 .testimonial-text { font-size: 12px; line-height: 1.6; color: #444; }
 
-/* СЕКЦИЯ ПОДПИСКИ (Снимок 3) */
-.subscribe-section {
-    background-color: #e5e0d4;
-    padding: 80px 0;
-    color: #121212;
-    position: relative; /* Контейнер для абсолютных фоновых элементов */
-    overflow: hidden;
-}
-.subscribe-container {
-    display: flex;
-    justify-content: center; /* Центрируем форму на экране */
-    align-items: center;
-    text-align: center;
-}
-.subscribe-text-side {
-    max-width: 500px;
-    width: 100%;
-    position: relative;
-    z-index: 3; /* Поднимаем текст над боковым декором */
-}
-.subscribe-text-side h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 28px;
-    margin-bottom: 10px;
-}
-.subscribe-text-side p {
-    font-size: 14px;
-    color: #444;
-    margin-bottom: 25px;
-}
-.subscribe-form {
-    display: flex;
-    max-width: 450px;
-    gap: 10px;
-    margin: 0 auto;
-}
-.subscribe-form input {
-    flex: 1;
-    padding: 12px 20px;
-    border-radius: 25px;
-    border: 1px solid #bbb;
-    font-family: inherit;
-    font-size: 13px;
-    outline: none;
-}
-.subscribe-form button {
-    background-color: #2c160e;
-    color: white;
-    border: none;
-    padding: 12px 25px;
-    border-radius: 25px;
-    cursor: pointer;
-    font-weight: 600;
-    font-size: 13px;
-}
-
-/* Декоративные пачки кофейных зерен по бокам */
-.beans-decor {
-    position: absolute;
-    top: 0;
-    width: 250px;
-    height: 100%;
-    background-size: contain;
-    background-repeat: no-repeat;
-    z-index: 1;
-}
-.left-beans {
-    left: 0;
-    background-image: url('./image_f28f16.jpg'); /* Левая фоновая картинка */
-    background-position: left center;
-}
-.right-beans {
-    right: 0;
-    background-image: url('./image_f28f16.jpg'); /* Правая фоновая картинка */
-    background-position: right center;
-}
-
-/* ПОДВАЛ (ФУТЕР) */
-footer {
-    background-color: #1a110d;
-    padding: 60px 0 40px 0;
-    font-size: 13px;
-}
-.footer-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    gap: 40px;
-}
-.footer-brand h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 22px;
-    letter-spacing: 2px;
-}
-.footer-links-grid {
-    display: flex;
-    gap: 50px;
-    flex-wrap: wrap;
-}
-.footer-col {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-.footer-col h4 {
-    color: #888;
-    font-size: 11px;
-    letter-spacing: 1px;
-    margin-bottom: 5px;
-}
-.footer-col a {
-    color: #ccc;
-    text-decoration: none;
-    transition: color 0.2s;
-}
-.footer-col a:hover { color: white; }
-
-.footer-social h4 {
-    color: #888;
-    font-size: 11px;
-    letter-spacing: 1px;
-    margin-bottom: 15px;
-}
-.social-icons {
-    display: flex;
-    gap: 15px;
-}
-.social-icons a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    opacity: 0.7;
-    transition: opacity 0.2s;
-}
-.social-icons a:hover { opacity: 1; }
-
-/* ========================================== */
-/* --- АДАПТИВНОСТЬ (МОБИЛЬНЫЕ И ПЛАНШЕТЫ) --- */
-/* ========================================== */
-
+/* --- АДАПТИВНОСТЬ --- */
 @media (max-width: 1280px) {
-    .prev-arrow { left: 15px; }
-    .next-arrow { right: 15px; }
-}
-
-@media (max-width: 992px) {
-    h1 { font-size: 42px; }
-    .hero_content { margin-top: 60px; }
-    .categories-container { justify-content: center; gap: 20px; }
-    .category_item { flex: 0 1 calc(50% - 20px); }
-    
-    header {
-        background: linear-gradient(180deg, #121212 40%, rgba(0,0,0,0.6) 100%), 
-                    url('./image_f28f33.png');
-        background-size: cover;
-        background-position: center;
-    }
-    .header-coffee-image { display: none; } /* Прячем дубликат на планшетах */
-    .footer-container { flex-direction: column; gap: 40px; }
-    .footer-links-grid { gap: 30px; }
+    .prev-arrow { left: 10px; }
+    .next-arrow { right: 10px; }
 }
 
 @media (max-width: 768px) {
-    .container { width: 90%; }
-    nav { padding: 25px 0; }
-    .nav_links a { display: none; } 
-    
-    h1 { font-size: 32px; }
-    .hero_content { max-width: 100%; text-align: center; }
-    .order_btn { width: 100%; }
-
-    .banner-container {
-        flex-direction: column;
-    }
-    .banner-img {
-        width: 100%;
-        height: 150px;
-    }
-    
-    .beans-decor { display: none; } /* Скрываем боковые зерна подписки на телефонах */
+    .categories-container { flex-wrap: wrap; justify-content: center; }
+    .category_item { flex: 0 1 calc(50% - 20px); }
 }
 
 @media (max-width: 576px) {
-    .nav-arrow { display: none !important; } 
-    .category_item { flex: 0 1 calc(50% - 10px); }
-    .footer-links-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; width: 100%; }
+    .banner-container { flex-direction: column; gap: 20px; }
+    .banner-img img { max-height: 120px; }
+    .nav-arrow { display: none !important; }
 }

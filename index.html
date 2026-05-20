@@ -10,23 +10,19 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
-        <div class="header-coffee-image"></div>
-
-        <div class="container relative-box z-index-up">
+        <div class="container">
             <nav>
                 <div class="logo">coffea</div>
                 <div class="nav_links">
                     <a href="#">home</a>
-                    <a href="#coffee">coffee</a>
+                    <a href="#desserts">coffee</a>
                     <a href="#desserts">bakery</a>
                     <a href="#banner">shop</a>
                     <a href="#testimonials">about</a>
-                    <a href="#" id="js-login">login</a>
-                    <div class="search-icon" id="js-search">&#128269;</div>
                     <div class="cart-icon-wrapper">
                         <span class="cart-icon">&#128722;</span>
                         <span class="cart-count" id="cart-counter">0</span>
@@ -46,19 +42,19 @@
     <section class="categories">
         <div class="container">
             <div class="categories-container">
-                <div class="category_item active-box" data-target="coffee">
+                <div class="category_item active-box">
                     <img src="https://img.icons8.com/ios/50/333333/coffee-to-go.png" alt="Hot Coffee">
                     <p>Hot Coffee</p>
                 </div>
-                <div class="category_item" data-target="coffee">
+                <div class="category_item">
                     <img src="https://img.icons8.com/ios/50/333333/ice-coffee.png" alt="Cold Coffee">
                     <p>Cold Coffee</p>
                 </div>
-                <div class="category_item" data-target="coffee">
+                <div class="category_item">
                     <img src="https://img.icons8.com/ios/50/333333/coffee-cup.png" alt="Cup Coffee">
                     <p>Cup Coffee</p>
                 </div>
-                <div class="category_item" data-target="desserts">
+                <div class="category_item">
                     <img src="https://img.icons8.com/ios/50/333333/cake.png" alt="Dessert">
                     <p>Dessert</p>
                 </div>
@@ -66,39 +62,15 @@
         </div>
     </section>
 
-    <section class="light-section" id="coffee">
+    <section class="light-section" id="desserts">
         <div class="container relative-box">
-            <h2 class="section-title">Our Special Coffee</h2>
+            <h2 class="section-title">Our Special Dessert</h2>
             
-            <button class="nav-arrow prev-arrow swiper-button-prev-coffee">&#10229;</button>
-            <button class="nav-arrow next-arrow swiper-button-next-coffee">&#10230;</button>
+            <button class="nav-arrow prev-arrow swiper-button-prev">&#10229;</button>
+            <button class="nav-arrow next-arrow swiper-button-next">&#10230;</button>
 
-            <div class="swiper swiper-coffee">
+            <div class="swiper">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide product-card">
-                        <div class="card-img-wrapper">
-                            <img src="https://images.unsplash.com/photo-1507133750040-4a8f57021571?w=500&auto=format&fit=crop&q=60" alt="Lungo coffee">
-                            <span class="wishlist-icon">&#9825;</span>
-                        </div>
-                        <h3>Lungo coffee</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
-                        <div class="card-footer">
-                            <span class="price">Rs. 200</span>
-                            <button class="card-btn js-buy-btn">Order Now</button>
-                        </div>
-                    </div>
-                    <div class="swiper-slide product-card">
-                        <div class="card-img-wrapper">
-                            <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=500&auto=format&fit=crop&q=60" alt="Lungo coffee">
-                            <span class="wishlist-icon">&#9825;</span>
-                        </div>
-                        <h3>Lungo coffee</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
-                        <div class="card-footer">
-                            <span class="price">Rs. 200</span>
-                            <button class="card-btn js-buy-btn">Order Now</button>
-                        </div>
-                    </div>
                     <div class="swiper-slide product-card">
                         <div class="card-img-wrapper">
                             <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?w=500&auto=format&fit=crop&q=60" alt="Lungo coffee">
@@ -111,6 +83,7 @@
                             <button class="card-btn js-buy-btn">Order Now</button>
                         </div>
                     </div>
+
                     <div class="swiper-slide product-card">
                         <div class="card-img-wrapper">
                             <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=500&auto=format&fit=crop&q=60" alt="Lungo coffee">
@@ -123,57 +96,7 @@
                             <button class="card-btn js-buy-btn">Order Now</button>
                         </div>
                     </div>
-                </div>
-                <div class="swiper-pagination pagination-coffee"></div>
-            </div>
-        </div>
-    </section>
 
-    <section class="light-section" id="desserts">
-        <div class="container relative-box">
-            <h2 class="section-title">Our Special Dessert</h2>
-            
-            <button class="nav-arrow prev-arrow swiper-button-prev-dessert">&#10229;</button>
-            <button class="nav-arrow next-arrow swiper-button-next-dessert">&#10230;</button>
-
-            <div class="swiper swiper-dessert">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide product-card">
-                        <div class="card-img-wrapper">
-                            <img src="https://images.unsplash.com/photo-1587314168485-3236d6710814?w=500&auto=format&fit=crop&q=60" alt="Lungo coffee">
-                            <span class="wishlist-icon">&#9825;</span>
-                        </div>
-                        <h3>Lungo coffee</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
-                        <div class="card-footer">
-                            <span class="price">Rs. 200</span>
-                            <button class="card-btn js-buy-btn">Order Now</button>
-                        </div>
-                    </div>
-                    <div class="swiper-slide product-card">
-                        <div class="card-img-wrapper">
-                            <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?w=500&auto=format&fit=crop&q=60" alt="Lungo coffee">
-                            <span class="wishlist-icon">&#9825;</span>
-                        </div>
-                        <h3>Lungo coffee</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
-                        <div class="card-footer">
-                            <span class="price">Rs. 200</span>
-                            <button class="card-btn js-buy-btn">Order Now</button>
-                        </div>
-                    </div>
-                    <div class="swiper-slide product-card">
-                        <div class="card-img-wrapper">
-                            <img src="https://images.unsplash.com/photo-1511018556340-d16986a1c194?w=500&auto=format&fit=crop&q=60" alt="Lungo coffee">
-                            <span class="wishlist-icon">&#9825;</span>
-                        </div>
-                        <h3>Lungo coffee</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
-                        <div class="card-footer">
-                            <span class="price">Rs. 200</span>
-                            <button class="card-btn js-buy-btn">Order Now</button>
-                        </div>
-                    </div>
                     <div class="swiper-slide product-card">
                         <div class="card-img-wrapper">
                             <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=500&auto=format&fit=crop&q=60" alt="Lungo coffee">
@@ -186,23 +109,36 @@
                             <button class="card-btn js-buy-btn">Order Now</button>
                         </div>
                     </div>
+
+                    <div class="swiper-slide product-card">
+                        <div class="card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?w=500&auto=format&fit=crop&q=60" alt="Lungo coffee">
+                            <span class="wishlist-icon">&#9825;</span>
+                        </div>
+                        <h3>Lungo coffee</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
+                        <div class="card-footer">
+                            <span class="price">Rs. 200</span>
+                            <button class="card-btn js-buy-btn">Order Now</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="swiper-pagination pagination-dessert"></div>
+                <div class="swiper-pagination"></div>
             </div>
         </div>
     </section>
 
     <section class="beans-banner" id="banner">
-        <div class="banner-container">
-            <div class="banner-img left-banner-img">
-                <img src="./image_f28f16.jpg" alt="Coffee beans left">
+        <div class="container banner-container">
+            <div class="banner-img">
+                <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=400&auto=format&fit=crop&q=60" alt="Coffee beans left">
             </div>
             <div class="banner-text">
                 <h2>Check Out Our Best<br>Coffee Beans</h2>
                 <button class="explore-btn" id="js-explore">Explore Our Products &gt;&gt;</button>
             </div>
-            <div class="banner-img right-banner-img">
-                <img src="./image_f28f16.jpg" alt="Coffee beans right">
+            <div class="banner-img">
+                <img src="https://images.unsplash.com/photo-1607687325211-4764b5568de5?w=400&auto=format&fit=crop&q=60" alt="Coffee beans right">
             </div>
         </div>
     </section>
@@ -261,106 +197,53 @@
         </div>
     </section>
 
-    <section class="subscribe-section">
-        <div class="beans-decor left-beans"></div>
-        <div class="beans-decor right-beans"></div>
-
-        <div class="container subscribe-container">
-            <div class="subscribe-text-side">
-                <h2>Join in and get 15% off!</h2>
-                <p>Subscribe to our newsletter to get 15% off discount code.</p>
-                <form class="subscribe-form" id="js-sub-form">
-                    <input type="email" placeholder="Email address" required>
-                    <button type="submit">Subscribe</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container footer-container">
-            <div class="footer-brand">
-                <h3>COFFEE</h3>
-            </div>
-            <div class="footer-links-grid">
-                <div class="footer-col">
-                    <h4>PRIVACY</h4>
-                    <a href="#">Terms of use</a>
-                    <a href="#">Privacy policy</a>
-                    <a href="#">Cookies</a>
-                </div>
-                <div class="footer-col">
-                    <h4>SERVICES</h4>
-                    <a href="#">Shop</a>
-                    <a href="#">Order ahead</a>
-                    <a href="#">Menu</a>
-                </div>
-                <div class="footer-col">
-                    <h4>ABOUT US</h4>
-                    <a href="#">Find a location</a>
-                    <a href="#">About us</a>
-                    <a href="#">Our story</a>
-                </div>
-                <div class="footer-col">
-                    <h4>INFORMATION</h4>
-                    <a href="#">Plans & pricing</a>
-                    <a href="#">Sell your products</a>
-                    <a href="#">Jobs</a>
-                </div>
-            </div>
-            <div class="footer-social">
-                <h4>SOCIAL MEDIA</h4>
-                <div class="social-icons">
-                    <a href="#">&#120143;</a>
-                    <a href="#">&#128247;</a>
-                    <a href="#">&#120225;</a>
-                    <a href="#">&#127968;</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <script>
-        // Слайдер Кофе
-        var swiperCoffee = new Swiper(".swiper-coffee", {
+        // 1. Слайдер десертов
+        var swiper = new Swiper(".swiper", {
             slidesPerView: 4,
             spaceBetween: 30,
-            pagination: { el: ".pagination-coffee", clickable: true },
-            navigation: { nextEl: ".swiper-button-next-coffee", prevEl: ".swiper-button-prev-coffee" },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
             breakpoints: {
-                0: { slidesPerView: 2, spaceBetween: 15 },
-                768: { slidesPerView: 3, spaceBetween: 20 },
-                1024: { slidesPerView: 4, spaceBetween: 30 }
+                0: {
+                    slidesPerView: 2,
+                    spaceBetween: 15
+                },
+                768: {
+                    slidesPerView: 4,
+                    spaceBetween: 30
+                }
             }
         });
 
-        // Слайдер Десертов
-        var swiperDessert = new Swiper(".swiper-dessert", {
-            slidesPerView: 4,
-            spaceBetween: 30,
-            pagination: { el: ".pagination-dessert", clickable: true },
-            navigation: { nextEl: ".swiper-button-next-dessert", prevEl: ".swiper-button-prev-dessert" },
-            breakpoints: {
-                0: { slidesPerView: 2, spaceBetween: 15 },
-                768: { slidesPerView: 3, spaceBetween: 20 },
-                1024: { slidesPerView: 4, spaceBetween: 30 }
-            }
-        });
-
-        // Слайдер Отзывов
+        // 2. Слайдер отзывов
         const swiper3 = new Swiper('.swiper3', {
             slidesPerView: 1,
             spaceBetween: 20,
-            pagination: { el: '.reviews-pagination', type: 'bullets', clickable: true },
+            pagination: {
+                el: '.reviews-pagination',
+                type: 'bullets',
+                clickable: true,
+            },
             breakpoints: {
-                768: { slidesPerView: 2 },
-                1024: { slidesPerView: 3 }
+                768: {
+                    slidesPerView: 2,
+                },
+                1024: {
+                    slidesPerView: 3,
+                }
             }
         });
 
-        // КОРЗИНА И ИНТЕРАКТИВНОСТЬ КНОПОК
+        // --- ЛОГИКА ДЛЯ КНОПОК И КОРЗИНЫ ---
         let cartCount = 0;
         const counterEl = document.getElementById('cart-counter');
 
@@ -369,30 +252,15 @@
                 e.preventDefault();
                 cartCount++;
                 counterEl.textContent = cartCount;
-                counterEl.classList.add('bounce');
+                counterEl.style.transform = 'scale(1.3)';
+                setTimeout(() => counterEl.style.transform = 'scale(1)', 200);
             });
-        });
-
-        counterEl.addEventListener('transitionend', () => {
-            counterEl.classList.remove('bounce');
-        });
-
-        // ПОИСК И ЛОГИН
-        document.getElementById('js-search').addEventListener('click', () => {
-            const query = prompt('What are you looking for?');
-            if(query) alert(`Searching for: ${query}`);
-        });
-
-        document.getElementById('js-login').addEventListener('click', (e) => {
-            e.preventDefault();
-            alert('Opening Login portal...');
         });
 
         document.getElementById('js-explore').addEventListener('click', () => {
             alert('Opening our coffee beans catalogue...');
         });
 
-        // РАБОТА СЕРДЕЧЕК (ЛАЙКОВ)
         document.querySelectorAll('.wishlist-icon').forEach(heart => {
             heart.addEventListener('click', function() {
                 this.classList.toggle('active-heart');
@@ -406,22 +274,11 @@
             });
         });
 
-        // СКРОЛЛ ПО КЛИКУ НА КАТЕГОРИИ
         document.querySelectorAll('.category_item').forEach(item => {
             item.addEventListener('click', function() {
                 document.querySelectorAll('.category_item').forEach(i => i.classList.remove('active-box'));
                 this.classList.add('active-box');
-                
-                const targetId = this.getAttribute('data-target');
-                document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
             });
-        });
-
-        // ФОРМА ПОДПИСКИ
-        document.getElementById('js-sub-form').addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('Thank you for subscribing! Your 15% off code sent to your email.');
-            e.target.reset();
         });
     </script>
 </body>
