@@ -12,16 +12,16 @@ body {
     overflow-x: hidden;
 }
 
-/* ОБНОВЛЕННАЯ ШАПКА - ССЫЛАЕТСЯ НА ВАШИ ЛОКАЛЬНЫЕ ФАЙЛЫ */
+/* СТИЛИ ШАПКИ (ССЫЛАЮТСЯ НА ВАШИ ФАЙЛЫ В REPOSITORY) */
 header {
     width: 100%;
     height: auto;
     padding-bottom: 120px;
-    position: relative; /* Чтобы внутри абсолютно позиционировать чашку */
+    position: relative; /* Позволяет чашке позиционироваться внутри */
     
-    /* Тёмный фон-текстура, который вы скинули */
+    /* Текстура темного макета фона */
     background-image: linear-gradient(90deg, #121212 35%, rgba(18, 18, 18, 0.7) 60%, rgba(0, 0, 0, 0) 100%), 
-                      url('bg-texture.jpg');
+                      url('./image_f28ef4.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -29,22 +29,21 @@ header {
     justify-content: center;
 }
 
-/* ВАША ЧАШКА КОФЕ С ЗЕРНАМИ */
+/* ВАША ЧАШКА КОФЕ С ЗЕРНАМИ ИЗ КАРТИНКИ */
 .header-coffee-image {
     position: absolute;
     top: 0;
     right: 0;
-    width: 50%; /* Занимает правую половину экрана на ПК */
+    width: 50%; /* На компьютерах занимает правую половину экрана */
     height: 100%;
-    /* Картинка чашки на прозрачном фоне, которую вы скинули */
-    background-image: url('coffee-cup.png'); 
+    background-image: url('./image_f28f33.png'); /* Файл прозрачной чашки */
     background-size: contain;
     background-position: right center;
     background-repeat: no-repeat;
-    z-index: 1; /* Под текстом, но над текстурой */
+    z-index: 1; /* Оставляет чашку под текстом, чтобы кнопки работали */
 }
 
-/* Слой поверх, чтобы текст гарантированно был доступен кликам */
+/* Слой поверх, чтобы текст меню и кнопки были кликабельными */
 .z-index-up {
     position: relative;
     z-index: 5;
@@ -118,7 +117,7 @@ nav {
     transform: scale(1.3);
 }
 
-/* ГЛАВНЫЙ ЭКРАН */
+/* КОНТЕНТ ШАПКИ */
 .hero_content {
     margin-top: 100px;
     max-width: 500px; 
@@ -187,7 +186,7 @@ h1 {
 .category_item p { font-weight: 600; font-size: 13px; }
 .active-box { border: 1px solid #777; border-radius: 10px; background-color: rgba(0,0,0,0.03); }
 
-/* СЕКЦИИ СЛАЙДЕРОВ ТОВАРОВ */
+/* КАРТОЧКИ ТОВАРОВ И СЛАЙДЕРЫ */
 .light-section {
     background-color: #f4f1ea;
     color: #121212;
@@ -401,7 +400,7 @@ h1 {
     object-fit: contain;
 }
 
-/* ФУТЕР */
+/* ПОДВАЛ (ФУТЕР) */
 footer {
     background-color: #1a110d;
     padding: 60px 0 40px 0;
@@ -477,12 +476,12 @@ footer {
     .category_item { flex: 0 1 calc(50% - 20px); }
     
     header {
-        /* На средних экранах плавно меняем градиент, чтобы чашка уходила на фон красивее */
+        /* На средних экранах плавно меняем градиент для лучшего отображения */
         background: linear-gradient(180deg, #121212 40%, rgba(0,0,0,0.5) 100%), 
-                    url('https://i.ibb.co/v4g0XgLp/image-f28f33.png');
+                    url('./image_f28f33.png');
         background-size: cover;
     }
-    .header-coffee-image { display: none; } /* Отключаем абсолютный дубликат */
+    .header-coffee-image { display: none; } /* Скрываем дубликат на планшетах */
     .footer-container { flex-direction: column; gap: 40px; }
     .footer-links-grid { gap: 30px; }
 }
@@ -490,7 +489,7 @@ footer {
 @media (max-width: 768px) {
     .container { width: 90%; }
     nav { padding: 25px 0; }
-    .nav_links a { display: none; }
+    .nav_links a { display: none; } /* На смартфонах прячем меню в аккуратную версию */
     
     h1 { font-size: 32px; }
     .hero_content { max-width: 100%; text-align: center; }
@@ -506,7 +505,7 @@ footer {
 }
 
 @media (max-width: 576px) {
-    .nav-arrow { display: none !important; }
+    .nav-arrow { display: none !important; } /* На смартфонах переключаем свайпами пальца */
     .category_item { flex: 0 1 calc(50% - 10px); }
     .footer-links-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; width: 100%; }
 }

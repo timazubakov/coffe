@@ -195,14 +195,14 @@
     <section class="beans-banner" id="banner">
         <div class="container banner-container">
             <div class="banner-img">
-                <img src="https://i.ibb.co/3ykp3C7M/beans-left.png" alt="Coffee beans left">
+                <img src="./image_f28f16.jpg" alt="Coffee beans left">
             </div>
             <div class="banner-text">
                 <h2>Check Out Our Best<br>Coffee Beans</h2>
                 <button class="explore-btn" id="js-explore">Explore Our Products &gt;&gt;</button>
             </div>
             <div class="banner-img right-banner-img">
-                <img src="https://i.ibb.co/C5m6WzFp/image-f28f16.jpg" alt="Coffee beans right">
+                <img src="./image_f28f16.jpg" alt="Coffee beans right">
             </div>
         </div>
     </section>
@@ -272,7 +272,7 @@
                 </form>
             </div>
             <div class="subscribe-img-side">
-                <img src="https://i.ibb.co/3ykp3C7M/beans-left.png" alt="Beans decoration">
+                <img src="./image_f28f16.jpg" alt="Beans decoration">
             </div>
         </div>
     </section>
@@ -360,7 +360,7 @@
             }
         });
 
-        // КОРЗИНА И ДОБАВЛЕНИЕ ТОВАРОВ
+        // КОРЗИНА И ИНТЕРАКТИВНОСТЬ КНОПОК
         let cartCount = 0;
         const counterEl = document.getElementById('cart-counter');
 
@@ -392,7 +392,7 @@
             alert('Opening our coffee beans catalogue...');
         });
 
-        // ЛАЙКИ (СЕРДЦА)
+        // РАБОТА СЕРДЕЧЕК (ЛАЙКОВ)
         document.querySelectorAll('.wishlist-icon').forEach(heart => {
             heart.addEventListener('click', function() {
                 this.classList.toggle('active-heart');
@@ -406,7 +406,7 @@
             });
         });
 
-        // КАТЕГОРИИ И СТРАНИЧНЫЙ СКРОЛЛ
+        // СКРОЛЛ ПО КЛИКУ НА КАТЕГОРИИ
         document.querySelectorAll('.category_item').forEach(item => {
             item.addEventListener('click', function() {
                 document.querySelectorAll('.category_item').forEach(i => i.classList.remove('active-box'));
