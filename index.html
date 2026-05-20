@@ -8,25 +8,24 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
     <header>
         <div class="container">
             <nav>
                 <div class="logo">coffea</div>
                 <div class="nav_links">
                     <a href="#">home</a>
-                    <a href="#coffee">coffee</a>
+                    <a href="#desserts">coffee</a>
                     <a href="#desserts">bakery</a>
                     <a href="#banner">shop</a>
                     <a href="#testimonials">about</a>
-                    <a href="#" class="login-btn">login</a>
-                    <div class="search-icon-wrapper">
-                        <span class="search-icon">&#128269;</span>
+                    <div class="cart-icon-wrapper">
+                        <span class="cart-icon">&#128722;</span>
+                        <span class="cart-count" id="cart-counter">0</span>
                     </div>
                 </div>
             </nav>
@@ -34,8 +33,8 @@
             <div class="hero_content">
                 <p class="welcome">WELCOME</p>
                 <h1>We serve the richest coffee in the city!</h1>
-                <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                <a href="#" class="order_btn">Order Now</a>
+                <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+                <a href="#" class="order_btn main-order-btn">Order Now</a>
             </div>
         </div>
     </header>
@@ -63,126 +62,68 @@
         </div>
     </section>
 
-    <section class="light-section" id="coffee">
-        <div class="container relative-box">
-            <h2 class="section-title">Our Special Coffee</h2>
-            
-            <button class="nav-arrow prev-arrow swiper-coffee-prev">&#10229;</button>
-            <button class="nav-arrow next-arrow swiper-coffee-next">&#10230;</button>
-
-            <div class="swiper coffee-swiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide product-card">
-                        <div class="card-img-wrapper">
-                            <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?w=500&auto=format&fit=crop&q=60" alt="Coffee">
-                            <span class="wishlist-icon">&#9825;</span>
-                        </div>
-                        <h3>Lungo coffee</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.</p>
-                        <div class="card-footer">
-                            <span class="price">Rs. 200</span>
-                            <button class="card-btn">Order Now</button>
-                        </div>
-                    </div>
-                    <div class="swiper-slide product-card">
-                        <div class="card-img-wrapper">
-                            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=500&auto=format&fit=crop&q=60" alt="Coffee">
-                            <span class="wishlist-icon">&#9825;</span>
-                        </div>
-                        <h3>Lungo coffee</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.</p>
-                        <div class="card-footer">
-                            <span class="price">Rs. 200</span>
-                            <button class="card-btn">Order Now</button>
-                        </div>
-                    </div>
-                    <div class="swiper-slide product-card">
-                        <div class="card-img-wrapper">
-                            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=500&auto=format&fit=crop&q=60" alt="Coffee">
-                            <span class="wishlist-icon">&#9825;</span>
-                        </div>
-                        <h3>Lungo coffee</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.</p>
-                        <div class="card-footer">
-                            <span class="price">Rs. 200</span>
-                            <button class="card-btn">Order Now</button>
-                        </div>
-                    </div>
-                    <div class="swiper-slide product-card">
-                        <div class="card-img-wrapper">
-                            <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?w=500&auto=format&fit=crop&q=60" alt="Coffee">
-                            <span class="wishlist-icon">&#9825;</span>
-                        </div>
-                        <h3>Lungo coffee</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.</p>
-                        <div class="card-footer">
-                            <span class="price">Rs. 200</span>
-                            <button class="card-btn">Order Now</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="light-section" id="desserts" style="padding-top: 0;">
+    <section class="light-section" id="desserts">
         <div class="container relative-box">
             <h2 class="section-title">Our Special Dessert</h2>
             
-            <button class="nav-arrow prev-arrow swiper-dessert-prev">&#10229;</button>
-            <button class="nav-arrow next-arrow swiper-dessert-next">&#10230;</button>
+            <button class="nav-arrow prev-arrow swiper-button-prev">&#10229;</button>
+            <button class="nav-arrow next-arrow swiper-button-next">&#10230;</button>
 
-            <div class="swiper dessert-swiper">
+            <div class="swiper">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide product-card">
                         <div class="card-img-wrapper">
-                            <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=500&auto=format&fit=crop&q=60" alt="Dessert">
+                            <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?w=500&auto=format&fit=crop&q=60" alt="Lungo coffee">
                             <span class="wishlist-icon">&#9825;</span>
                         </div>
                         <h3>Lungo coffee</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
                         <div class="card-footer">
                             <span class="price">Rs. 200</span>
-                            <button class="card-btn">Order Now</button>
+                            <button class="card-btn js-buy-btn">Order Now</button>
                         </div>
                     </div>
+
                     <div class="swiper-slide product-card">
                         <div class="card-img-wrapper">
-                            <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?w=500&auto=format&fit=crop&q=60" alt="Dessert">
+                            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=500&auto=format&fit=crop&q=60" alt="Lungo coffee">
                             <span class="wishlist-icon">&#9825;</span>
                         </div>
                         <h3>Lungo coffee</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
                         <div class="card-footer">
                             <span class="price">Rs. 200</span>
-                            <button class="card-btn">Order Now</button>
+                            <button class="card-btn js-buy-btn">Order Now</button>
                         </div>
                     </div>
+
                     <div class="swiper-slide product-card">
                         <div class="card-img-wrapper">
-                            <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=500&auto=format&fit=crop&q=60" alt="Dessert">
+                            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=500&auto=format&fit=crop&q=60" alt="Lungo coffee">
                             <span class="wishlist-icon">&#9825;</span>
                         </div>
                         <h3>Lungo coffee</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
                         <div class="card-footer">
                             <span class="price">Rs. 200</span>
-                            <button class="card-btn">Order Now</button>
+                            <button class="card-btn js-buy-btn">Order Now</button>
                         </div>
                     </div>
+
                     <div class="swiper-slide product-card">
                         <div class="card-img-wrapper">
-                            <img src="https://images.unsplash.com/photo-1532499016263-f2c3e89df9c8?w=500&auto=format&fit=crop&q=60" alt="Dessert">
+                            <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?w=500&auto=format&fit=crop&q=60" alt="Lungo coffee">
                             <span class="wishlist-icon">&#9825;</span>
                         </div>
                         <h3>Lungo coffee</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
                         <div class="card-footer">
                             <span class="price">Rs. 200</span>
-                            <button class="card-btn">Order Now</button>
+                            <button class="card-btn js-buy-btn">Order Now</button>
                         </div>
                     </div>
                 </div>
+                <div class="swiper-pagination"></div>
             </div>
         </div>
     </section>
@@ -190,14 +131,14 @@
     <section class="beans-banner" id="banner">
         <div class="container banner-container">
             <div class="banner-img">
-                <img src="img/image_f28f16.png" alt="Beans Left" onerror="this.src='https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=400&auto=format&fit=crop&q=60'">
+                <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=400&auto=format&fit=crop&q=60" alt="Coffee beans left">
             </div>
             <div class="banner-text">
                 <h2>Check Out Our Best<br>Coffee Beans</h2>
-                <button class="explore-btn">Explore Our Products &gt;&gt;</button>
+                <button class="explore-btn" id="js-explore">Explore Our Products &gt;&gt;</button>
             </div>
             <div class="banner-img">
-                <img src="img/image_f28f16.png" alt="Beans Right" onerror="this.src='https://images.unsplash.com/photo-1607687325211-4764b5568de5?w=400&auto=format&fit=crop&q=60'">
+                <img src="https://images.unsplash.com/photo-1607687325211-4764b5568de5?w=400&auto=format&fit=crop&q=60" alt="Coffee beans right">
             </div>
         </div>
     </section>
@@ -207,12 +148,12 @@
             <p class="sub-title">Come and Join</p>
             <h2 class="section-title">Our Happy Customers</h2>
 
-            <div class="swiper reviews-swiper">
+            <div class="swiper3">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide testimonial-card">
                         <div class="testimonial-header">
                             <div class="user-info">
-                                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=60" alt="User" class="avatar">
+                                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=60" alt="James Smith" class="avatar">
                                 <div>
                                     <h4>James Smith</h4>
                                     <p class="role">Entrepreneur</p>
@@ -222,29 +163,31 @@
                         </div>
                         <p class="testimonial-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                     </div>
+
                     <div class="swiper-slide testimonial-card">
                         <div class="testimonial-header">
                             <div class="user-info">
-                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=60" alt="User" class="avatar">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=60" alt="Alex Mercer" class="avatar">
                                 <div>
-                                    <h4>James Smith</h4>
-                                    <p class="role">Entrepreneur</p>
+                                    <h4>Alex Mercer</h4>
+                                    <p class="role">Designer</p>
                                 </div>
                             </div>
                             <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
                         </div>
                         <p class="testimonial-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                     </div>
+
                     <div class="swiper-slide testimonial-card">
                         <div class="testimonial-header">
                             <div class="user-info">
-                                <img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=100&auto=format&fit=crop&q=60" alt="User" class="avatar">
+                                <img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=100&auto=format&fit=crop&q=60" alt="John Doe" class="avatar">
                                 <div>
-                                    <h4>James Smith</h4>
-                                    <p class="role">Entrepreneur</p>
+                                    <h4>John Doe</h4>
+                                    <p class="role">Manager</p>
                                 </div>
                             </div>
-                            <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+                            <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
                         </div>
                         <p class="testimonial-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                     </div>
@@ -254,102 +197,88 @@
         </div>
     </section>
 
-    <section class="subscribe-section">
-        <div class="container subscribe-container">
-            <h2>Join in and ger 15% off!</h2>
-            <p>Subscribe to our newsletter in get 15% off discount code.</p>
-            <form class="subscribe-form" onsubmit="event.preventDefault();">
-                <div class="input-wrapper">
-                    <span class="mail-icon">&#9993;</span>
-                    <input type="email" placeholder="Email address" required>
-                </div>
-                <button type="submit" class="subscribe-btn">Subscribe</button>
-            </form>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container footer-container">
-            <div class="footer-col brand-col">
-                <h2 class="footer-logo">Coffee</h2>
-            </div>
-            <div class="footer-col">
-                <h3>PRIVACY</h3>
-                <ul>
-                    <li><a href="#">Privacy policy</a></li>
-                    <li><a href="#">Cookies</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h3>SERVICES</h3>
-                <ul>
-                    <li><a href="#">Shop</a></li>
-                    <li><a href="#">Order ahead</a></li>
-                    <li><a href="#">Menu</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h3>ABOUT US</h3>
-                <ul>
-                    <li><a href="#">Find a location</a></li>
-                    <li><a href="#">About us</a></li>
-                    <li><a href="#">Our story</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h3>INFOTNATION</h3>
-                <ul>
-                    <li><a href="#">Plans & pricing</a></li>
-                    <li><a href="#">Sell your prodcts</a></li>
-                    <li><a href="#">Jobs</a></li>
-                </ul>
-            </div>
-            <div class="footer-col social-col">
-                <h3>SOCIAL MEDIA</h3>
-                <div class="social-links">
-                    <a href="#">&#120143;</a>
-                    <a href="#">&#128247;</a>
-                    <a href="#">&#120229;</a>
-                    <a href="#">&#120236;</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
     <script>
-        // Инициализация слайдеров
-        new Swiper(".coffee-swiper", {
+        // 1. Слайдер десертов
+        var swiper = new Swiper(".swiper", {
             slidesPerView: 4,
-            spaceBetween: 25,
-            navigation: { nextEl: ".swiper-coffee-next", prevEl: ".swiper-coffee-prev" },
-            breakpoints: {
-                0: { slidesPerView: 1.2, spaceBetween: 15 },
-                768: { slidesPerView: 2.5, spaceBetween: 20 },
-                1200: { slidesPerView: 4, spaceBetween: 25 }
-            }
-        });
-
-        new Swiper(".dessert-swiper", {
-            slidesPerView: 4,
-            spaceBetween: 25,
-            navigation: { nextEl: ".swiper-dessert-next", prevEl: ".swiper-dessert-prev" },
-            breakpoints: {
-                0: { slidesPerView: 1.2, spaceBetween: 15 },
-                768: { slidesPerView: 2.5, spaceBetween: 20 },
-                1200: { slidesPerView: 4, spaceBetween: 25 }
-            }
-        });
-
-        new Swiper(".reviews-swiper", {
-            slidesPerView: 3,
             spaceBetween: 30,
-            pagination: { el: ".reviews-pagination", clickable: true },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
             breakpoints: {
-                0: { slidesPerView: 1, spaceBetween: 15 },
-                768: { slidesPerView: 2, spaceBetween: 20 },
-                1024: { slidesPerView: 3, spaceBetween: 30 }
+                0: {
+                    slidesPerView: 2,
+                    spaceBetween: 15
+                },
+                768: {
+                    slidesPerView: 4,
+                    spaceBetween: 30
+                }
             }
+        });
+
+        // 2. Слайдер отзывов
+        const swiper3 = new Swiper('.swiper3', {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            pagination: {
+                el: '.reviews-pagination',
+                type: 'bullets',
+                clickable: true,
+            },
+            breakpoints: {
+                768: {
+                    slidesPerView: 2,
+                },
+                1024: {
+                    slidesPerView: 3,
+                }
+            }
+        });
+
+        // --- ЛОГИКА ДЛЯ КНОПОК И КОРЗИНЫ ---
+        let cartCount = 0;
+        const counterEl = document.getElementById('cart-counter');
+
+        document.querySelectorAll('.js-buy-btn, .main-order-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                cartCount++;
+                counterEl.textContent = cartCount;
+                counterEl.style.transform = 'scale(1.3)';
+                setTimeout(() => counterEl.style.transform = 'scale(1)', 200);
+            });
+        });
+
+        document.getElementById('js-explore').addEventListener('click', () => {
+            alert('Opening our coffee beans catalogue...');
+        });
+
+        document.querySelectorAll('.wishlist-icon').forEach(heart => {
+            heart.addEventListener('click', function() {
+                this.classList.toggle('active-heart');
+                if (this.classList.contains('active-heart')) {
+                    this.innerHTML = '&#9829;';
+                    this.style.color = '#e74c3c';
+                } else {
+                    this.innerHTML = '&#9825;';
+                    this.style.color = 'white';
+                }
+            });
+        });
+
+        document.querySelectorAll('.category_item').forEach(item => {
+            item.addEventListener('click', function() {
+                document.querySelectorAll('.category_item').forEach(i => i.classList.remove('active-box'));
+                this.classList.add('active-box');
+            });
         });
     </script>
 </body>
