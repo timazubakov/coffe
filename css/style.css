@@ -12,16 +12,16 @@ body {
     overflow-x: hidden;
 }
 
-/* ОБНОВЛЕННАЯ ШАПКА С ВАШИМ ФОНОМ */
+/* ОБНОВЛЕННАЯ ШАПКА - ССЫЛАЕТСЯ НА ВАШИ ЛОКАЛЬНЫЕ ФАЙЛЫ */
 header {
     width: 100%;
     height: auto;
     padding-bottom: 120px;
     position: relative; /* Чтобы внутри абсолютно позиционировать чашку */
     
-    /* Текстура темного макета фона */
-    background-image: linear-gradient(90deg, #121212 30%, rgba(18, 18, 18, 0.7) 60%, rgba(0, 0, 0, 0) 100%), 
-                      url('https://i.ibb.co/v4g0XgLp/image-f28f33.png');
+    /* Тёмный фон-текстура, который вы скинули */
+    background-image: linear-gradient(90deg, #121212 35%, rgba(18, 18, 18, 0.7) 60%, rgba(0, 0, 0, 0) 100%), 
+                      url('bg-texture.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -29,14 +29,15 @@ header {
     justify-content: center;
 }
 
-/* ВАША ЧАШКА КОФЕ С ЗЕРНАМИ С КАРТИНКИ */
+/* ВАША ЧАШКА КОФЕ С ЗЕРНАМИ */
 .header-coffee-image {
     position: absolute;
     top: 0;
     right: 0;
     width: 50%; /* Занимает правую половину экрана на ПК */
     height: 100%;
-    background-image: url('https://i.ibb.co/v4g0XgLp/image-f28f33.png'); /* Картинка чашки */
+    /* Картинка чашки на прозрачном фоне, которую вы скинули */
+    background-image: url('coffee-cup.png'); 
     background-size: contain;
     background-position: right center;
     background-repeat: no-repeat;
