@@ -15,10 +15,10 @@
     background-color: rgba(255, 255, 255, 0.25);
 }
 
-/* --- СЕКЦИЯ ПОДПИСКИ С ЗЕРНАМИ ПО БОКАМ --- */
+/* --- СЕКЦИЯ ПОДПИСКИ (ЧИНИМ ФОН) --- */
 .newsletter-banner {
     position: relative;
-    background-color: #eae3d5; /* Светло-кремовый фон как на макете */
+    background-color: #eae3d5; /* Светлый крем из макета */
     padding: 60px 0;
     display: flex;
     align-items: center;
@@ -49,7 +49,7 @@
     margin-bottom: 25px;
 }
 
-/* Форма ввода */
+/* Форма подписки */
 .subscribe-form {
     display: flex;
     justify-content: center;
@@ -101,7 +101,7 @@
     background-color: #1a0c08;
 }
 
-/* Декоративные кофейные зерна */
+/* Кофейные зерна по бокам */
 .beans-decor {
     width: 220px;
     height: 100%;
@@ -112,22 +112,21 @@
     pointer-events: none;
 }
 
-/* Текстура рассыпанных зерен слева и справа */
 .left-beans {
     left: 0;
-    background-image: url('https://i.ibb.co/wSg7g6p/beans-left.png'); /* Если у вас есть локальный файл, замените путь */
+    background-image: url('https://i.ibb.co/wSg7g6p/beans-left.png'); /* Ссылка-заглушка, можно заменить на локальную картинку */
     background-position: left center;
 }
 
 .right-beans {
     right: 0;
-    background-image: url('https://i.ibb.co/ssM9g4X/beans-right.png'); /* Если у вас есть локальный файл, замените путь */
+    background-image: url('https://i.ibb.co/ssM9g4X/beans-right.png'); /* Ссылка-заглушка, можно заменить на локальную картинку */
     background-position: right center;
 }
 
 /* --- СТИЛИ ДЛЯ ТЕМНОГО ФУТЕРА --- */
 .main-footer {
-    background-color: #231b15; /* Глубокий темно-коричневый цвет */
+    background-color: #231b15; /* Настоящий шоколадный цвет */
     padding: 70px 0 60px 0;
     color: #eae3d5;
     font-family: 'Montserrat', sans-serif;
@@ -157,8 +156,6 @@
 
 .footer-col ul {
     list-style: none;
-    padding: 0;
-    margin: 0;
 }
 
 .footer-col ul li {
@@ -176,7 +173,7 @@
     color: #fff;
 }
 
-/* Социальные сети */
+/* Иконки соцсетей */
 .social-icons {
     display: flex;
     gap: 15px;
@@ -193,7 +190,7 @@
     opacity: 0.7;
 }
 
-/* Адаптивность для новых блоков */
+/* Адаптивность под мобилки */
 @media (max-width: 992px) {
     .footer-grid {
         grid-template-columns: repeat(3, 1fr);
@@ -215,7 +212,7 @@
         width: 100%;
     }
     .beans-decor {
-        display: none; /* Убираем зерна на мелких экранах, чтобы не перекрывали текст */
+        display: none;
     }
     .footer-grid {
         grid-template-columns: 1fr;
