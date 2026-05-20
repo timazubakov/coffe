@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
     <header>
         <div class="container">
             <nav>
@@ -266,7 +265,6 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <script>
-        // 1. Инициализация слайдера десертов
         var swiper = new Swiper(".swiper", {
             slidesPerView: 4,
             spaceBetween: 30,
@@ -284,7 +282,6 @@
             }
         });
 
-        // 2. Инициализация слайдера отзывов
         const swiper3 = new Swiper('.swiper3', {
             slidesPerView: 1,
             spaceBetween: 20,
@@ -299,7 +296,6 @@
             }
         });
 
-        // 3. Лайки на карточках
         document.querySelectorAll('.wishlist-icon').forEach(heart => {
             heart.addEventListener('click', function() {
                 this.classList.toggle('active-heart');
@@ -313,7 +309,6 @@
             });
         });
 
-        // 4. Переключение активной категории
         document.querySelectorAll('.category_item').forEach(item => {
             item.addEventListener('click', function() {
                 document.querySelectorAll('.category_item').forEach(i => i.classList.remove('active-box'));
